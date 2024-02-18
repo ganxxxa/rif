@@ -7,7 +7,7 @@ const page = () => {
   return (
     <main>
       <AboutRif />
-      <ConsultationComponent />
+      {/* <ConsultationComponent /> */}
       <BlogSection />
     </main>
   );

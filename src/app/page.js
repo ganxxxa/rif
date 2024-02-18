@@ -27,11 +27,15 @@ export default function Home() {
             </button>
           </Link>
         </div>
-        <Image fill src="/bg.jpg" className="absolute opacity-50 -z-10" />
+        <Image
+          alt="img"
+          fill
+          src="/bg.jpg"
+          className="absolute opacity-50 -z-10"
+        />
       </section>
       <SliderComponent />
-      <ConsultationComponent />
-      <Form />
+      {/* <ConsultationComponent /> */}
       <BlogSection />
     </main>
   );

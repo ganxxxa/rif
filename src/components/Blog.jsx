@@ -4,7 +4,7 @@ import React from "react";
 
 const BlogCard = ({ title, date, content, imageUrl }) => {
   return (
-    <div className="bg-[#F8F7F5] m-6 rounded-lg  mb-4">
+    <div className="bg-[#F5F8FC] m-6 rounded-lg  mb-4">
       <img
         src={imageUrl}
         alt={title}
@@ -46,8 +46,8 @@ const BlogSection = () => {
   ];
 
   return (
-    <section className="flex flex-col items-center bg-[#F8F7F5] justify-center pb-16 gap-10">
-      <div className="uppercase font-semibold w-screen text-black text-center pt-24 text-4xl">
+    <section className="flex flex-col items-center bg-[#F5F8FC] justify-center pb-16 gap-10">
+      <div className="uppercase font-semibold w-screen text-[#0B2538] text-center pt-24 text-4xl">
         آخرین مطالب بلاگ
       </div>
       <div className="flex justify-center gap-2 items-center h-full px-2">

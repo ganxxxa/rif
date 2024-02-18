@@ -65,11 +65,15 @@ const AboutRif = () => {
   return (
     <section>
       <div className="h-full sm:h-screen w-screen">
-        <div className="bg-black h-48 sm:h-1/2 flex justify-center text-3xl sm:text-4xl lg:text-5xl items-center">
-          <h1 className="mt-10 sm:mt-20"> درباره ریف پرشیا</h1>
+        <div
+          className="bg-[#0B2538] h-48 sm:h-1/2 flex justify-center text-3xl sm:text-4xl relative lg:text-5xl bg-cover items-center"
+          style={{ backgroundImage: `url(/about.jpg)` }}
+        >
+          <div className="absolute w-full h-full bg-black opacity-30"></div>
+          <h1 className="z-10 mt-10 sm:mt-20"> درباره ریف پرشیا</h1>
         </div>
         <div className="h-full sm:h-1/2 bg-white flex flex-col sm:flex-row-reverse">
-          <div className="w-full sm:w-3/5 h-full py-6 px-5 md:px-10 text-black flex justify-center items-center">
+          <div className="w-full  h-full py-6 px-5 md:px-10 text-[#0B2538] flex justify-center items-center">
             <p className="text-sm sm:text-md  lg:text-lg font-light leading-relaxed pl-5 sm:pl-8 xl:pl-20">
               در دنیای پیچیده مهاجرت ریف پرشیا شریکی مورد اعتماد برای دست‌یابی
               به موفقیت برای شماست. ما تمرکز بر تخصص و حرفه‌ای بودن کارشناسان
@@ -83,15 +87,20 @@ const AboutRif = () => {
               مهاجرتی خود نزدیک شوید.
             </p>
           </div>
-          <div className="w-full sm:w-2/5 relative h-64 sm:h-full">
-            <Image fill src="/abt.jpg" className="object-cover h-full" />
-          </div>
+          {/* <div className="w-full sm:w-2/5 relative h-64 sm:h-full">
+            <Image
+              alt="img"
+              fill
+              src="/abt.jpg"
+              className="object-cover h-full"
+            />
+          </div> */}
         </div>
       </div>
 
-      <div className="w-screen h-full sm:h-screen py-16 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 bg-[#F8F7F5] text-black grid grid-cols-1 sm:grid-cols-2 gap-5">
+      <div className="w-screen h-full  py-16 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 bg-[#F5F8FC] text-[#0B2538] grid grid-cols-1 sm:grid-cols-2 gap-5">
         {/* First grid */}
-        <div className="bg-[#F8F7F5] p-4 flex flex-col items-start justify-around">
+        <div className="bg-[#F5F8FC] p-4 flex flex-col items-start justify-around">
           <h2 className="font-bold text-4xl sm:text-5xl lg:text-6xl mb-2">
             مزایای همکاری باما
           </h2>
@@ -166,21 +175,21 @@ const AboutRif = () => {
       >
         <div className="flex flex-col justify-between items-center border-gray-500 border my-4 px-4 py-3 rounded-xl w-auto">
           <p className="text-md text-gray-700">لورم ایپسوم</p>
-          <p className="text-2xl text-black">
+          <p className="text-2xl text-[#0B2538]">
             {counter1 >= 50 ? "50" : counter1}+
           </p>
           <p className="text-sm text-pink-500">لورم ایپسوم</p>
         </div>
         <div className="flex flex-col justify-between items-center border-gray-500 border my-4 px-4 py-3 rounded-xl w-auto">
           <p className="text-md text-gray-700">لورم ایپسوم</p>
-          <p className="text-2xl text-black">
+          <p className="text-2xl text-[#0B2538]">
             {counter2 >= 30 ? "30" : counter2}+
           </p>
           <p className="text-sm text-pink-500">لورم ایپسوم</p>
         </div>
         <div className="flex flex-col justify-between items-center border-gray-500 border my-4 px-4 py-3 rounded-xl w-auto">
           <p className="text-md text-gray-700">لورم ایپسوم</p>
-          <p className="text-2xl text-black">
+          <p className="text-2xl text-[#0B2538]">
             {counter3 >= 20 ? "20" : counter3}+
           </p>
           <p className="text-sm text-pink-500">لورم ایپسوم</p>

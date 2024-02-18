@@ -4,9 +4,9 @@ import { FaMapMarkerAlt, FaPhone, FaEnvelope } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-black w-screen py-16 px-8 sm:lg:px-12 lg:px-24 xl:px-40 tracking-wider leading-relaxed flex flex-col sm:flex-row gap-4 items-start mt-10 justify-center text-sm">
+    <footer className="bg-[#0B2538] w-screen py-16 px-8 sm:lg:px-12 lg:px-24 xl:px-40 tracking-wider leading-relaxed flex flex-col sm:flex-row gap-4 items-start mt-10 justify-center text-sm">
       <div className="w-full sm:w-1/5 flex flex-col gap-6 h-full text-center sm:text-start items-center sm:items-start">
-        <Image src="/logo.svg" width="96" height="42" />
+        <Image alt="img" src="/logo.svg" width="96" height="42" />
         <p className="pl-4 ">
           لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ
         </p>
@@ -35,7 +35,7 @@ const Footer = () => {
               <p>ایمیل</p>
             </div>
           </div>
-          <div className="sm:hidden flex flex-col gap-2">
+          <div className="sm:hidden flex flex-col justify-center gap-2">
             <div className="w-7 h-7 rounded-full bg-pink-500 "></div>
             <div className="w-7 h-7 rounded-full bg-pink-500 "></div>
             <div className="w-7 h-7 rounded-full bg-pink-500 "></div>

@@ -1,17 +1,20 @@
 import React from "react";
 
-const Form = () => {
+const Form = ({ scrolto }) => {
   return (
-    <div className="flex flex-col-reverse md:flex-row-reverse bg-white">
+    <div
+      id={scrolto}
+      className="flex flex-col-reverse md:flex-row-reverse bg-white"
+    >
       {/* Right half with image */}
       <div
         className="w-full md:w-1/2 h-96 md:h-auto bg-cover bg-center"
-        style={{ backgroundImage: "url('/slide2.jpg')" }}
+        style={{ backgroundImage: "url('/form.jpg')" }}
       ></div>
 
       {/* Left half with form */}
-      <div className="w-full md:w-1/2 p-16 md:p-6 xl:p-16">
-        <h3 className="text-black text-2md md:text-3md font-semibold">
+      <div className="w-full md:w-1/2 px-8 py-16 md:p-6 xl:p-16">
+        <h3 className="text-[#0B2538] text-2md md:text-3md font-semibold">
           درخواست مشاوره
         </h3>
         <p className="text-gray-500 py-4 mb-8 md:mb-12">
@@ -80,7 +83,7 @@ const Form = () => {
                   value="option1"
                   className="mr-2"
                 />{" "}
-                سرویس۱
+                اقامت
               </label>
               <label>
                 <input
@@ -89,7 +92,7 @@ const Form = () => {
                   value="option2"
                   className="mr-2"
                 />{" "}
-                سرویس۲
+                شهروندی
               </label>
               <label>
                 <input
@@ -98,7 +101,7 @@ const Form = () => {
                   value="option3"
                   className="mr-2"
                 />
-                سرویس۳
+                سایر خدمات
               </label>
             </div>
           </div>
