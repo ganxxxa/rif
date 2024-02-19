@@ -4,15 +4,15 @@ import React from "react";
 
 const BlogCard = ({ title, date, content, imageUrl }) => {
   return (
-    <div className="bg-[#F5F8FC] m-6 rounded-lg  mb-4">
+    <div className="bg-[#F5F8FC] my-2 rounded-lg  mb-4">
       <img
         src={imageUrl}
         alt={title}
         className=" rounded-md w-full mb-4 h-48 object-cover"
       />
       <p className="text-gray-600 mb-2">{date}</p>
-      <p className="text-gray-800 font-bold text-lg mb-4">{content}</p>
-      <a href="/" className="text-gray-800 text-sm  ">
+      <p className="text-gray-800 font-bold text-lg pl-10 mb-4">{content}</p>
+      <a href="/" className="text-gray-800  font-semibold text-sm  ">
         اطلاعات بیشتر
       </a>
     </div>
@@ -46,8 +46,8 @@ const BlogSection = () => {
   ];
 
   return (
-    <section className="flex flex-col items-center bg-[#F5F8FC] justify-center pb-16 gap-10">
-      <div className="uppercase font-semibold w-screen text-[#0B2538] text-center pt-24 text-4xl">
+    <section className="flex flex-col items-center bg-[#F5F8FC] justify-center pb-16 px-4 sm:px-12 lg:px-24">
+      <div className="uppercase font-semibold w-screen text-[#0B2538] text-center py-24 text-4xl">
         آخرین مطالب بلاگ
       </div>
       <div className="flex justify-center gap-2 items-center h-full px-2">
@@ -65,7 +65,7 @@ const BlogSection = () => {
       </div>
       <button
         type="submit"
-        className="bg-slate-800 hover:bg-slate-700 text-white font-medium py-3 px-4 rounded"
+        className="bg-slate-800 hover:bg-slate-700 text-white font-medium py-3 my-10 px-4 rounded"
       >
         مشاهده همه‌ی مطالب
       </button>

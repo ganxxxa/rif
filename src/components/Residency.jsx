@@ -28,10 +28,10 @@ const ServicesInfo = ({ service }) => {
               <div className=" p-4 h-20 w-72" key={i}>
                 <button
                   onClick={() => handleButtonClick(i)}
-                  className={`border-gray-400 bg-[#0000004a] flex justify-center items-center border rounded-lg w-full gap-4 text-center text-white font-semibold h-full py-1 px-4 ${
+                  className={`border-gray-400 bg-[#0000004a] flex justify-center items-center border rounded-lg w-full gap-4  hover:bg-pink-950 hover:border-pink-700 hover:bg-opacity-20 text-center duration-300 text-white font-semibold h-full py-1 px-4 ${
                     selectedButton === i
                       ? "border-pink-700 bg-pink-950 bg-opacity-40"
-                      : " border-gray-100  bg-[#0B2538]"
+                      : "bg-[#0B2538] bg-opacity-40"
                   }
                   } `}
                 >

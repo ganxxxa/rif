@@ -11,7 +11,7 @@ const ServicesButton = ({ services, path }) => {
       {services.map((e, i) => (
         <Link
           key={i}
-          className={`border-gray-500 flex flex-row-reverse justify-end items-center border rounded-lg w-1/4 gap-4 min-w-48 text-center text-white font-semibold h-full py-1 px-4 ${
+          className={`border-gray-500 flex flex-row-reverse justify-end items-center border rounded-lg w-1/4 gap-4 min-w-48 text-center hover:bg-pink-950 hover:border-gray-600 hover:bg-opacity-20 text-white font-semibold h-full py-1 px-4 ${
             pathname === `/services/${path}/${e.flag}`
               ? "border-pink-700 bg-pink-950 bg-opacity-40"
               : " border-gray-100  bg-[#0B2538]"
