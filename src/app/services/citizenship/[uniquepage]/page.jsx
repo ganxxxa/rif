@@ -24,7 +24,10 @@ export default function UniquePage({ params: { uniquepage } }) {
   return (
     <>
       <section className="h-full">
-        <div className="flex flex-col justify-center items-center py-20 gap-8 text-center w-full h-full  px-4 sm:px-12 lg:px-40">
+        <div
+          style={{ backgroundImage: `url(/in.jpg)` }}
+          className="flex flex-col justify-center items-center py-20 gap-8 text-center w-full h-full  px-4 sm:px-12 lg:px-40"
+        >
           <h1 className="text-4xl font-semibold pt-16">
             خدمات شهروندی ریف پرشیا
           </h1>

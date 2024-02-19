@@ -70,7 +70,10 @@ const ServicesInfo = ({ service }) => {
           />
         )}
 
-        <div className="w-screen bg-[#0B2538]">
+        <div
+          style={{ backgroundImage: `url(/in.jpg)` }}
+          className="w-screen bg-[#0B2538]"
+        >
           <div className="w-full p-6 sm:p-16 flex gap-12 justify-center items-center">
             <Card
               icon="/icon/fam.jpg"

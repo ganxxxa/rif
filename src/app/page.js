@@ -1,7 +1,9 @@
+"use client";
 import BlogSection from "@/components/Blog";
 import ConsultationComponent from "@/components/Consultation";
 import Form from "@/components/Form";
 import SliderComponent from "@/components/Slider";
+import Increament from "@/components/increament";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -39,7 +41,8 @@ export default function Home() {
         </div>
       </section>
       <SliderComponent />
-      {/* <ConsultationComponent /> */} <Form />
+      <Increament />
+      <Form />
       <BlogSection />
     </main>
   );

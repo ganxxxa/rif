@@ -9,7 +9,7 @@ const SliderComponent = () => {
   const [intervalId, setIntervalId] = useState(null);
   const [isPaused, setIsPaused] = useState(false);
   const [progress, setProgress] = useState(0);
-  const backgrounds = ["slide.jpg", "bg.jpg", "slide2.jpg"];
+  const backgrounds = ["2.jpg", "3.jpg", "1.jpg"];
 
   const texts = [
     {
