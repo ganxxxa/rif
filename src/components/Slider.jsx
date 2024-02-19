@@ -32,17 +32,21 @@ const SliderComponent = () => {
   useEffect(() => {
     const progressInterval = setInterval(() => {
       if (!isPaused) {
-        setProgress((prevProgress) => {
-          // Reset progress to 0 if it reaches 100
-          if (prevProgress >= 100) {
-            return 0;
-          } else {
-            // Increment progress by 1
-            return prevProgress + 1;
-          }
-        });
+        setTimeout(() => {
+          setProgress((prevProgress) => {
+            // Reset progress to 0 if it reaches 100
+            if (prevProgress >= 100) {
+              return 0;
+            } else {
+              // Increment progress by 1
+              return prevProgress + 1;
+            }
+          });
+        }, 100);
+      } else {
+        setProgress(0);
       }
-    }, 53); // 80 milliseconds for smoother animation (adjust as needed)
+    }, 43); //   (adjust as needed)
 
     const transitionInterval = setInterval(() => {
       if (!isPaused) {
@@ -51,9 +55,9 @@ const SliderComponent = () => {
           setBgIndex((prevIndex) => (prevIndex + 1) % backgrounds.length);
           setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
           setFadeIn(false);
-        }, 300); // Delay to allow fade-out transition to complete
+        }, 100); // Delay to allow fade-out transition to complete
       }
-    }, 5000);
+    }, 4343);
 
     setIntervalId(transitionInterval);
 
@@ -86,7 +90,7 @@ const SliderComponent = () => {
         }`}
       >
         <div className="px-4 sm:px-16 lg:px-40 flex flex-col gap-6 sm:items-start items-center justify-center">
-          <h1 className="text-xl md:text-2xl lg:text-3xl xl:text-4xl font-bold mb-4">
+          <h1 className="text-xl md:text-2xl lg:text-3xl   font-bold mb-4">
             {texts[textIndex].title}
           </h1>
           <p className="text-md md:text-lg text-justify ">
@@ -95,25 +99,24 @@ const SliderComponent = () => {
           <button
             type="button"
             className="border-2 text-md border-red-600 text-red-600 py-2 px-7 rounded-lg"
-            onClick={toggleInterval}
           >
             اطلاعات بیشتر
           </button>
-          <button
-            type="button"
-            className="text-mdpy-2 px-7 rounded-lg"
-            onClick={toggleInterval}
-          >
-            {isPaused ? <FaPlay /> : <FaPause />}
-          </button>
-          {/* <div className="my-8">
+          <div className="flex items-center pt-4">
+            <button
+              type="button"
+              className="text-mdpy-2 px-7 rounded-lg"
+              onClick={toggleInterval}
+            >
+              {isPaused ? <FaPlay /> : <FaPause />}
+            </button>
             <div className="bg-gray-300 h-1 w-72 rounded-md overflow-hidden">
               <div
-                className="bg-blue-500 h-full transition-width duration-100"
+                className="bg-gray-500 h-full transition-width duration-0 "
                 style={{ width: `${progress}%` }}
               ></div>
-            </div>
-          </div> */}
+            </div>{" "}
+          </div>
         </div>
       </div>
     </div>
