@@ -7,6 +7,7 @@ import Accordion from "@/components/Accordion";
 import QA from "@/components/QA";
 import Image from "next/image";
 import ServicesInfo from "@/components/Residency";
+import Form from "@/components/Form";
 
 export async function generateStaticParams() {
   return residency.map((p) => ({
@@ -37,6 +38,7 @@ export default function UniquePage({ params: { uniquepage } }) {
       </section>
       <ServicesInfo service={service} />
       <Accordion />
+      <Form />
     </>
   );
 }

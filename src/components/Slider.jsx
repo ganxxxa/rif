@@ -1,7 +1,6 @@
 "use client";
-import Image from "next/image";
 import React, { useState, useEffect } from "react";
-import { FaPause, FaPlay } from "react-icons/fa";
+import { FaPause, FaPlay, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const SliderComponent = () => {
   const [bgIndex, setBgIndex] = useState(0);
@@ -29,35 +28,26 @@ const SliderComponent = () => {
         "ویزای تحصیلی نتنها برای درس خواندن نیست، بلکه این امکان را به افراد می‌دهد تا به کشور دیگری سفر کنند و علاوه بر درس خواندن با فرهنگ و زندگی در آن  آشنا شوند. گرفتن مدرک تحصیلی و خلق تجربه‌های جدید می‌تواند به پیشرفت و توسعه شخصی و حرفه‌ای هر فرد  کمک کرده و دید جدیدی برای انتخاب کشور محل زندگی‌اش می‌دهد .",
     },
   ];
+
   useEffect(() => {
     const progressInterval = setInterval(() => {
       if (!isPaused) {
-        setTimeout(() => {
-          setProgress((prevProgress) => {
-            // Reset progress to 0 if it reaches 100
-            if (prevProgress >= 100) {
-              return 0;
-            } else {
-              // Increment progress by 1
-              return prevProgress + 1;
-            }
-          });
-        }, 100);
-      } else {
-        setProgress(0);
+        setProgress((prevProgress) =>
+          prevProgress >= 100 ? 0 : prevProgress + 1
+        );
       }
-    }, 43); //   (adjust as needed)
+    }, 45); // (adjust as needed)
 
-    const transitionInterval = setInterval(() => {
-      if (!isPaused) {
+    const transitionInterval = () => {
+      if (progress === 100) {
         setFadeIn(true);
         setTimeout(() => {
           setBgIndex((prevIndex) => (prevIndex + 1) % backgrounds.length);
           setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
           setFadeIn(false);
-        }, 100); // Delay to allow fade-out transition to complete
+        }, 100);
       }
-    }, 4343);
+    };
 
     setIntervalId(transitionInterval);
 
@@ -65,7 +55,7 @@ const SliderComponent = () => {
       clearInterval(progressInterval);
       clearInterval(transitionInterval);
     };
-  }, [isPaused]);
+  }, [isPaused, progress]);
 
   useEffect(() => {
     if (isPaused) {
@@ -75,6 +65,30 @@ const SliderComponent = () => {
 
   const toggleInterval = () => {
     setIsPaused(!isPaused);
+  };
+
+  const increaseIndices = () => {
+    setFadeIn(true);
+    setTimeout(() => {
+      setBgIndex((prevIndex) => (prevIndex + 1) % backgrounds.length);
+      setTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
+      setProgress(0);
+      setFadeIn(false);
+    }, 100);
+  };
+
+  const decreaseIndices = () => {
+    setFadeIn(true);
+    setTimeout(() => {
+      setBgIndex(
+        (prevIndex) => (prevIndex - 1 + backgrounds.length) % backgrounds.length
+      );
+      setTextIndex(
+        (prevIndex) => (prevIndex - 1 + texts.length) % texts.length
+      );
+      setProgress(0);
+      setFadeIn(false);
+    }, 100);
   };
 
   return (
@@ -89,33 +103,51 @@ const SliderComponent = () => {
           fadeIn ? "opacity-0" : "opacity-100"
         }`}
       >
-        <div className="px-4 sm:px-16 lg:px-40 flex flex-col gap-6 sm:items-start items-center justify-center">
-          <h1 className="text-xl md:text-2xl lg:text-3xl   font-bold mb-4">
-            {texts[textIndex].title}
-          </h1>
-          <p className="text-md md:text-lg text-justify ">
-            {texts[textIndex].description}
-          </p>
-          <button
-            type="button"
-            className="border-2 text-md border-red-600 text-red-600 py-2 px-7 rounded-lg"
-          >
-            اطلاعات بیشتر
-          </button>
-          <div className="flex items-center pt-4">
+        <div className="px-4 sm:px-16 lg:px-40 flex flex-col gap-6 sm:items-start items-center h-full justify-between py-24">
+          <div className="flex flex-col">
+            <h1 className="text-xl md:text-2xl lg:text-3xl   font-bold mb-4">
+              {texts[textIndex].title}
+            </h1>
+            <p className="text-md md:text-lg text-justify ">
+              {texts[textIndex].description}
+            </p>
+          </div>
+          <div>
             <button
               type="button"
-              className="text-mdpy-2 px-7 rounded-lg"
-              onClick={toggleInterval}
+              className="border-2 text-md border-red-600 text-red-600 mb-4 py-2 px-7 rounded-lg"
             >
-              {isPaused ? <FaPlay /> : <FaPause />}
+              اطلاعات بیشتر
             </button>
-            <div className="bg-gray-300 h-1 w-72 rounded-md overflow-hidden">
-              <div
-                className="bg-gray-500 h-full transition-width duration-0 "
-                style={{ width: `${progress}%` }}
-              ></div>
-            </div>{" "}
+            <div className="flex items-center pt-4 gap-1">
+              <button
+                type="button"
+                className="text-md py-2 px-2 scale-125 rounded-lg"
+                onClick={decreaseIndices}
+              >
+                <FaChevronRight />
+              </button>
+              <button
+                type="button"
+                className="text-md py-2 px-2 rounded-lg"
+                onClick={toggleInterval}
+              >
+                {isPaused ? <FaPlay /> : <FaPause />}
+              </button>
+              <button
+                type="button"
+                className="text-md py-2 px-2 scale-125 rounded-lg"
+                onClick={increaseIndices}
+              >
+                <FaChevronLeft />
+              </button>
+              <div className="bg-gray-300 h-1 w-72 mx-8 rounded-md overflow-hidden">
+                <div
+                  className="bg-gray-500 h-full transition-width duration-0 "
+                  style={{ width: `${progress}%` }}
+                ></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

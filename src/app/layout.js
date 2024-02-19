@@ -19,8 +19,8 @@ export default function RootLayout({ children }) {
       <body className={`leading-relaxed  ${arabic.className}`}>
         <Navbar scrolto="#contact" />
         {children}
-        <Form scrolto="contact" />
-        <Footer />
+
+        <Footer scrolto="contact" />
       </body>
     </html>
   );

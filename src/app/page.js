@@ -39,7 +39,7 @@ export default function Home() {
         </div>
       </section>
       <SliderComponent />
-      {/* <ConsultationComponent /> */}
+      {/* <ConsultationComponent /> */} <Form />
       <BlogSection />
     </main>
   );

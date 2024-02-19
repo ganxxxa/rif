@@ -8,7 +8,7 @@ const page = () => {
   return (
     <main>
       <AboutRif />
-      {/* <ConsultationComponent /> */} <Form scrolto="contact" />
+      {/* <ConsultationComponent /> */} <Form />
       <BlogSection />
     </main>
   );

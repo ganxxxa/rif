@@ -9,9 +9,12 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
-const Footer = () => {
+const Footer = ({ scrolto }) => {
   return (
-    <footer className="bg-[#0B2538] w-screen py-16 px-8 sm:lg:px-12 lg:px-24 xl:px-40 tracking-wider leading-relaxed flex flex-col sm:flex-row gap-4 items-start mt-10 justify-center text-sm">
+    <footer
+      id={scrolto}
+      className="bg-[#0B2538] w-screen py-16 px-8 sm:lg:px-12 lg:px-24 xl:px-40 tracking-wider leading-relaxed flex flex-col sm:flex-row gap-4 items-start mt-10 justify-center text-sm"
+    >
       <div className="w-full sm:w-1/5 flex flex-col gap-6 h-full text-center sm:text-start items-center sm:items-start">
         <Image alt="img" src="/logo.svg" width="36" height="42" />
         <p className="pl-4 ">

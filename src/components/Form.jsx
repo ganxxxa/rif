@@ -1,11 +1,8 @@
 import React from "react";
 
-const Form = ({ scrolto }) => {
+const Form = () => {
   return (
-    <div
-      id={scrolto}
-      className="flex flex-col-reverse md:flex-row-reverse bg-white"
-    >
+    <div className="flex flex-col-reverse md:flex-row-reverse bg-white">
       {/*   image */}
       <div
         className="w-full md:w-1/2 h-96 md:h-auto bg-cover bg-center"
