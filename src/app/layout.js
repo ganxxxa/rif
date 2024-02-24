@@ -16,7 +16,9 @@ export default function RootLayout({ children }) {
   };
   return (
     <html lang="en">
-      <body className={`leading-relaxed  ${arabic.className}`}>
+      <body
+        className={`leading-relaxed  overflow-x-hidden w-screen ${arabic.className}`}
+      >
         <Navbar scrolto="#contact" />
         {children}
 

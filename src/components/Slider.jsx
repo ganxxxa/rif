@@ -92,7 +92,7 @@ const SliderComponent = () => {
   };
 
   return (
-    <div className="flex flex-col-reverse sm:flex-row-reverse gap-4 h-full sm:h-[520px]  bg-white">
+    <div className="flex flex-col-reverse w-screen sm:flex-row-reverse gap-4 h-full sm:h-[520px]  bg-white">
       <div
         className={`sm:w-5/12 w-full h-96 sm:h-full bg-cover bg-center transition-opacity duration-300 `}
         style={{ backgroundImage: `url(${backgrounds[bgIndex]})` }}
@@ -108,40 +108,42 @@ const SliderComponent = () => {
             <h1 className="text-xl md:text-2xl lg:text-3xl   font-bold mb-4">
               {texts[textIndex].title}
             </h1>
-            <p className="text-md md:text-lg text-justify ">
+            <p className="text-md md:text-lg text-justify p-2">
               {texts[textIndex].description}
             </p>
           </div>
-          <div>
+          <div className="flex flex-col items-center sm:items-start">
             <button
               type="button"
               className="border-2 text-md border-red-600 text-red-600 mb-4 py-2 px-7 rounded-lg"
             >
               اطلاعات بیشتر
             </button>
-            <div className="flex items-center pt-4 gap-1">
-              <button
-                type="button"
-                className="text-md py-2 px-2 scale-125 rounded-lg"
-                onClick={decreaseIndices}
-              >
-                <FaChevronRight />
-              </button>
-              <button
-                type="button"
-                className="text-md py-2 px-2 rounded-lg"
-                onClick={toggleInterval}
-              >
-                {isPaused ? <FaPlay /> : <FaPause />}
-              </button>
-              <button
-                type="button"
-                className="text-md py-2 px-2 scale-125 rounded-lg"
-                onClick={increaseIndices}
-              >
-                <FaChevronLeft />
-              </button>
-              <div className="bg-gray-300 h-1 w-72 mx-8 rounded-md overflow-hidden">
+            <div className="flex flex-col sm:flex-row items-center sm:pt-4 sm:gap-1">
+              <div className="flex py-4">
+                <button
+                  type="button"
+                  className="text-md py-2 px-2 scale-125 rounded-lg"
+                  onClick={decreaseIndices}
+                >
+                  <FaChevronRight />
+                </button>
+                <button
+                  type="button"
+                  className="text-md py-2 px-2 rounded-lg"
+                  onClick={toggleInterval}
+                >
+                  {isPaused ? <FaPlay /> : <FaPause />}
+                </button>
+                <button
+                  type="button"
+                  className="text-md py-2 px-2 scale-125 rounded-lg"
+                  onClick={increaseIndices}
+                >
+                  <FaChevronLeft />
+                </button>
+              </div>
+              <div className="bg-gray-300 h-1 w-48 sm:w-72 mx-8 rounded-md overflow-hidden">
                 <div
                   className="bg-gray-500 h-full transition-width duration-0 "
                   style={{ width: `${progress}%` }}

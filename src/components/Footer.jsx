@@ -18,7 +18,7 @@ const Footer = ({ scrolto }) => {
       <div className="w-full sm:w-1/5 flex flex-col gap-6 h-full text-center sm:text-start items-center sm:items-start">
         <Image alt="img" src="/logo.svg" width="36" height="42" />
         <p className="pl-4 ">
-          ریف پرشیا شریکی مورد اعتماد برای دست‌یابی به موفقیت برای شماست.
+          ریف پرشیا، شریکی مورد اعتماد برای تحقق اهداف شماست.
         </p>
       </div>
       <span className="sm:hidden block h-0.5 opacity-30  w-full bg-white" />
@@ -29,13 +29,13 @@ const Footer = ({ scrolto }) => {
               <div>
                 <FaMapMarkerAlt />
               </div>
-              <p>تهران، بلوار اندرزگو، کوچه بهزاد، پلاک ۲</p>
+              <p>تهران، بلوار اندرزگو</p>
             </div>
             <div className="flex gap-4 items-start mt-2">
               <div>
                 <FaPhone />
               </div>
-              <p>+971 50 887 7577</p>
+              <p dir="ltr">+۹۸ ۹۲۲ ۷۱۲ ۷۰۷۷</p>
             </div>
             <div className="flex gap-4 items-start mt-2">
               <div>
@@ -66,12 +66,7 @@ const Footer = ({ scrolto }) => {
             >
               ریف پرشیا
             </Link>
-            <Link
-              href="/services/residency/spain"
-              className={`hover:text-pink-400 hover:scale-110 duration-200 `}
-            >
-              خدمات
-            </Link>
+
             <Link
               href="/about"
               className={`hover:text-pink-400 hover:scale-110 duration-200 `}
@@ -117,18 +112,19 @@ const Footer = ({ scrolto }) => {
       <div className="w-full sm:w-1/5 flex flex-col gap-6 mt-3 sm:mt-0 items-center sm:items-start">
         <div className="hidden sm:flex gap-2">
           <div className="w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center">
-            <FaInstagram className="text-white scale-125 " />
+            <a href="https://instagram.com/rif_persia">
+              <FaInstagram className="text-white scale-125 " />
+            </a>
           </div>
           <div className="w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center">
-            <FaWhatsapp className="text-white scale-125" />
+            <a href="https://wa.me/+0989227127077">
+              <FaWhatsapp className="text-white scale-125" />
+            </a>
           </div>
         </div>
         <p className="text-center sm:text-start ">
-          جهت دریافت مشاوره‌ امور مهاجرتی و شهروندی با ما در ارتباط باشید
+          جهت دریافت مشاوره‌ امور اقامت و شهروندی با ما در ارتباط باشید
         </p>
-        <button type="button" className="border-2 text-md py-2 px-7 rounded-lg">
-          اطلاعات بیشتر
-        </button>
       </div>
     </footer>
   );

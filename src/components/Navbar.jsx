@@ -40,12 +40,11 @@ const Navbar = ({ scrolto }) => {
           }`}
           onClick={toggleMenu}
         >
-          <Link href="/blog">بلاگ</Link>
-          <Link href={scrolto}>تماس با ما</Link>
           <Link href="/about">درباره ما</Link>
           <Link href="/services/residency/spain">خدمات اقامت</Link>
           <Link href="/services/citizenship/turkey">خدمات شهروندی</Link>
           <Link href="/services/other">سایر خدمات</Link>
+          <Link href="/blog">بلاگ</Link>
         </ul>
         <div className="hidden sm:flex w-full flex-row justify-between items-center">
           <ul className=" flex flex-col sm:flex-row-reverse gap-6 sm:gap-9">

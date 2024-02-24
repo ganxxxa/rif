@@ -10,16 +10,16 @@ import Link from "next/link";
 export default function Home() {
   return (
     <main>
-      <section className="relative w-screen h-screen overflow-hidden">
+      <section className="relative max-w-screen h-screen overflow-hidden">
         <div className="relative w-screen h-screen">
           <div className="text-white absolute h-full w-full  flex sm:items-start items-center text-center sm:text-start justify-center flex-col gap-10  px-8 md:px-24 xl:px-40">
             <h2 className="font-semibold z-10 text-5xl sm:text-6xl">
               تردد در دنیایی بدون مرز!
             </h2>
-            <p className="text-md z-10 sm:w-1/2">
-              تنها با ارائه برنامه‌ای بی‌نقص اقامت شما به کشور دیگری در کمترین
-              زمان به شما داده می‌شود. تیم مشاوران رامش یاور فرزام فارسی
-              تهران”ر.ی.ف پرشیا” قدم به قدم در برنامه مهاجرتتان کنار شماست.
+            <p className="sm:text-xl text-lg z-10 leading-relaxed sm:w-1/2">
+              <span className="text-pink-500 font-semibold"> ر.ی.ف پرشیا </span>
+              با ارائه‌ي راه‌کارهای متناسب، شما را از مهاجرت دائم به کشوری دیگر
+              بی‌نیاز می‌کند.{" "}
             </p>
             <Link className="z-10" href="/">
               <button

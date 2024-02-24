@@ -69,25 +69,25 @@ const Increament = () => {
       style={{ backgroundImage: `url(/in.jpg)` }}
     >
       <div className="flex flex-col justify-between gap-2 items-center border-gray-500 border my-4 px-4 py-3 rounded-xl w-auto">
-        <p className="text-md text-gray-100   ">لورم ایپسوم</p>
+        <p className="text-md text-gray-100   "> بیش از</p>
         <p className="text-2xl text-gray-100 ">
-          {counter1 >= 50 ? "50" : counter1}+
+          {counter1 >= 1000 ? "50" : counter1}+
         </p>
-        <p className="text-sm  text-pink-500">لورم ایپسوم</p>
+        <p className="text-sm  text-pink-500">پرونده موفق </p>
       </div>
       <div className="flex flex-col justify-between gap-2 items-center border-gray-500 border my-4 px-4 py-3 rounded-xl w-auto">
-        <p className="text-md text-gray-100  ">لورم ایپسوم</p>
+        <p className="text-md text-gray-100  "> بیش از</p>
         <p className="text-2xl text-gray-100  ">
-          {counter2 >= 30 ? "30" : counter2}+
+          {counter2 >= 10 ? "30" : counter2}+
         </p>
-        <p className="text-sm text-pink-500">لورم ایپسوم</p>
+        <p className="text-sm text-pink-500"> سابقه فعالیت</p>
       </div>
       <div className="flex flex-col justify-between gap-2 items-center border-gray-500 border my-4 px-4 py-3 rounded-xl w-auto">
-        <p className="text-md text-gray-100 ">لورم ایپسوم</p>
+        <p className="text-md text-gray-100 ">بیش از</p>
         <p className="text-2xl text-gray-100  ">
-          {counter3 >= 20 ? "20" : counter3}+
+          {counter3 >= 15 ? "20" : counter3}+
         </p>
-        <p className="text-sm text-pink-500">لورم ایپسوم</p>
+        <p className="text-sm text-pink-500">کشور تحت پوشش خدماتی </p>
       </div>
     </div>
   );
