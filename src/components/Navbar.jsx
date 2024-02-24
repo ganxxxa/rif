@@ -14,9 +14,6 @@ const Navbar = ({ scrolto }) => {
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
-  useEffect(() => {
-    console.log(usePathname);
-  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
