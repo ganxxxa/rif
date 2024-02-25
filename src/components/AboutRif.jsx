@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import Increament from "./increament";
+import Increament from "./Increament";
 const AboutRif = () => {
   return (
     <section>
