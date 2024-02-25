@@ -15,33 +15,33 @@ const Increament = () => {
             // Increment the counters until they reach their respective targets
             const interval1 = setInterval(() => {
               setCounter1((prevCounter) => {
-                if (prevCounter >= 50) {
+                if (prevCounter >= 1000) {
                   clearInterval(interval1);
-                  return 50;
+                  return 1000;
                 }
                 return prevCounter + 1;
               });
-            }, 30); // Adjust the interval as needed
+            }, 1); // Adjust the interval as needed
 
             const interval2 = setInterval(() => {
               setCounter2((prevCounter) => {
-                if (prevCounter >= 30) {
+                if (prevCounter >= 10) {
                   clearInterval(interval2);
-                  return 30;
+                  return 10;
                 }
                 return prevCounter + 1;
               });
-            }, 50); // Adjust the interval as needed
+            }, 90); // Adjust the interval as needed
 
             const interval3 = setInterval(() => {
               setCounter3((prevCounter) => {
-                if (prevCounter >= 20) {
+                if (prevCounter >= 15) {
                   clearInterval(interval3);
-                  return 20;
+                  return 15;
                 }
                 return prevCounter + 1;
               });
-            }, 40); // Adjust the interval as needed
+            }, 60); // Adjust the interval as needed
           }
         });
       },
@@ -71,21 +71,21 @@ const Increament = () => {
       <div className="flex flex-col justify-between gap-2 items-center border-gray-500 border my-4 px-4 py-3 rounded-xl w-auto">
         <p className="text-md text-gray-100   "> بیش از</p>
         <p className="text-2xl text-gray-100 ">
-          {counter1 >= 1000 ? "50" : counter1}+
+          {counter1 >= 1000 ? "1000" : counter1}+
         </p>
         <p className="text-sm  text-pink-500">پرونده موفق </p>
       </div>
       <div className="flex flex-col justify-between gap-2 items-center border-gray-500 border my-4 px-4 py-3 rounded-xl w-auto">
         <p className="text-md text-gray-100  "> بیش از</p>
         <p className="text-2xl text-gray-100  ">
-          {counter2 >= 10 ? "30" : counter2}+
+          {counter2 >= 10 ? "10" : counter2}+
         </p>
         <p className="text-sm text-pink-500"> سابقه فعالیت</p>
       </div>
       <div className="flex flex-col justify-between gap-2 items-center border-gray-500 border my-4 px-4 py-3 rounded-xl w-auto">
         <p className="text-md text-gray-100 ">بیش از</p>
         <p className="text-2xl text-gray-100  ">
-          {counter3 >= 15 ? "20" : counter3}+
+          {counter3 >= 15 ? "15" : counter3}+
         </p>
         <p className="text-sm text-pink-500">کشور تحت پوشش خدماتی </p>
       </div>
