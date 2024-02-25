@@ -11,9 +11,6 @@ const arabic = Noto_Sans_Arabic({
 });
 
 export default function RootLayout({ children }) {
-  const scrollTo = () => {
-    homeRef.current.scrollIntoView({ behavior: "smooth" });
-  };
   return (
     <html lang="en">
       <body

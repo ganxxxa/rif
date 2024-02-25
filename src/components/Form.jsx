@@ -1,16 +1,13 @@
 import React from "react";
 
-const Form = () => {
+const Form = ({ scrol }) => {
   return (
-    <div className="flex flex-col-reverse md:flex-row-reverse bg-white">
-      {/*   image */}
-      <div
-        className="w-full md:w-1/2 h-96 md:h-auto bg-cover bg-center"
-        style={{ backgroundImage: "url('/form.jpg')" }}
-      ></div>
-
-      {/*  form */}
-      <div className="w-full md:w-1/2 px-8 py-12 md:px-12 xl:p-16">
+    <div
+      id={scrol}
+      className="flex justify-center items-center bg-white"
+      style={{ backgroundImage: "url('/form.jpg')" }}
+    >
+      <div className="w-full md:w-1/2 scale-90 rounded-md bg-white px-8 py-12 md:px-12 xl:p-16">
         <h3 className="text-[#0B2538] text-lg md:text-xl font-semibold">
           درخواست مشاوره
         </h3>

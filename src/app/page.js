@@ -43,7 +43,7 @@ export default function Home() {
               با ارائه‌ي راه‌کارهای متناسب، شما را از مهاجرت دائم به کشوری دیگر
               بی‌نیاز می‌کند.{" "}
             </p>
-            <Link className="z-10" href="/">
+            <Link className="z-10" href="/#more-info">
               <button
                 type="button"
                 className="border-2 text-md py-2 px-7 rounded-lg"
@@ -77,7 +77,7 @@ export default function Home() {
       </section>
       <SliderComponent />
       <Increament />
-      <Form />
+      <Form scrol="more-info" />
       <BlogSection />
     </main>
   );
