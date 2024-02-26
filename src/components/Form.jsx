@@ -1,9 +1,57 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
+import emailjs from "emailjs-com";
 
-const Form = ({ scrol }) => {
+const Form = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+    service: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Your EmailJS template parameters
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      from_phone: formData.phone,
+      message: formData.message,
+      service: formData.service,
+    };
+
+    // Replace these with your EmailJS configuration
+    const serviceID = "service_0776pd7";
+    const templateID = "template_qinadtc";
+    const userID = "9ZWBA7BUYVUUvq-az";
+
+    emailjs
+      .send(serviceID, templateID, templateParams, userID)
+      .then((response) => {
+        console.log("Email sent!", response);
+        alert("پیام شما ارسال شد");
+
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+          phone: "",
+          service: "",
+        });
+      })
+      .catch((error) => {
+        console.error("Email error:", error);
+      });
+  };
   return (
     <div
-      id={scrol}
       className="flex justify-center items-center object-cover bg-cover bg-white"
       style={{ backgroundImage: "url('/form.jpg')" }}
     >
@@ -14,7 +62,7 @@ const Form = ({ scrol }) => {
         <p className="text-gray-500 text-sm py-4 mb-8 md:mb-12">
           با تکمیل این فرم مشاوران ما در کمتر از 24 ساعت با شما تماس می‌گیرند.
         </p>
-        <form className="w-full flex flex-col gap-1">
+        <form className="w-full flex flex-col gap-1" onSubmit={handleSubmit}>
           <div className="flex flex-col md:flex-row gap-4">
             <div className="mb-4 md:w-1/2">
               <label
@@ -28,6 +76,8 @@ const Form = ({ scrol }) => {
                 type="text"
                 id="name"
                 name="name"
+                value={formData.name}
+                onChange={handleChange}
                 className="border bg-gray-200 text-sm rounded w-full py-2 px-3 text-gray-600 border-gray-300"
               />
             </div>
@@ -43,6 +93,8 @@ const Form = ({ scrol }) => {
                 type="text"
                 id="phone"
                 name="phone"
+                value={formData.phone}
+                onChange={handleChange}
                 className="border bg-gray-200 text-sm rounded w-full py-2 px-3 text-gray-600 border-gray-300"
               />
             </div>
@@ -59,6 +111,8 @@ const Form = ({ scrol }) => {
               type="email"
               id="email"
               name="email"
+              value={formData.email}
+              onChange={handleChange}
               className="border bg-gray-200 text-sm rounded w-full py-2 px-3 text-gray-600 border-gray-300"
             />
           </div>
@@ -73,28 +127,31 @@ const Form = ({ scrol }) => {
               <label>
                 <input
                   type="radio"
-                  name="option"
-                  value="option1"
+                  name="service"
+                  value="اقامت"
                   className="mr-2"
+                  onChange={handleChange}
                 />{" "}
                 اقامت
               </label>
               <label>
                 <input
                   type="radio"
-                  name="option"
-                  value="option2"
+                  name="service"
+                  value="شهروندی"
                   className="mr-2"
+                  onChange={handleChange}
                 />{" "}
                 شهروندی
               </label>
               <label>
                 <input
                   type="radio"
-                  name="option"
-                  value="option3"
+                  name="service"
+                  value="سایر "
                   className="mr-2"
-                />
+                  onChange={handleChange}
+                />{" "}
                 سایر خدمات
               </label>
             </div>
@@ -111,6 +168,8 @@ const Form = ({ scrol }) => {
               id="message"
               name="message"
               rows="4"
+              value={formData.message}
+              onChange={handleChange}
               className="border bg-gray-200 text-md text-sm rounded w-full py-2 px-3 text-gray-600 border-gray-300"
             />
           </div>

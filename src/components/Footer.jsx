@@ -99,7 +99,7 @@ const Footer = ({ scrolto }) => {
               شهروندی
             </Link>
             <Link
-              href="/services/other/1"
+              href="/services/other"
               className={`hover:text-pink-400 hover:scale-110 duration-200 `}
             >
               {" "}

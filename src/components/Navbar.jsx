@@ -110,7 +110,7 @@ const Navbar = ({ scrollToHome }) => {
                         ? "text-pink-500"
                         : " text-gray-600"
                     }`}
-                    href="/services/other/1"
+                    href="/services/other"
                     onClick={toggleDropdown}
                   >
                     سایر خدمات

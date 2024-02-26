@@ -82,7 +82,7 @@ export default function Home() {
       <SliderComponent scrollToHome={scrollToHome} />
       <Increament />
       <div ref={ref}>
-        <Form scrol="more-info" />
+        <Form />
       </div>
       <BlogSection />
     </main>
