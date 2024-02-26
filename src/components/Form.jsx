@@ -4,7 +4,7 @@ const Form = ({ scrol }) => {
   return (
     <div
       id={scrol}
-      className="flex justify-center items-center bg-white"
+      className="flex justify-center items-center object-cover bg-cover bg-white"
       style={{ backgroundImage: "url('/form.jpg')" }}
     >
       <div className="w-full md:w-1/2 scale-90 rounded-md bg-white px-8 py-12 md:px-12 xl:p-16">
