@@ -17,15 +17,20 @@ const ServicesInfo = ({ service }) => {
 
   return (
     <div className="bg-white text-[#0B2538] w-screen h-full">
-      <div
-        className="w-screen relative h-[75vh] md:h-80 flex items-center justify-center object-cover bg-cover text-black"
-        style={{ backgroundImage: `url(/bg/${service.flag}.jpg)` }}
-      >
-        <div className="bg-gradient-to-b from-transparent from-10% to-[#0b2538b9] absolute w-full h-full flex flex-col gap-10 justify-center md:justify-end py-6 items-center">
-          <h3 className="text-6xl text-white">{service.name}</h3>
-          <div className="flex flex-col md:flex-row w-full gap-6 justify-center items-center">
+      <div className="w-screen relative min-h-48 h-[35vw] md:h-80 flex items-center justify-center  text-black">
+        <Image
+          fill
+          className="bg-cover   object-cover"
+          src={`/bg/${service.flag}.jpg`}
+        />
+        <div className="bg-gradient-to-b from-transparent from-10% to-[#0b2538b9] absolute w-full h-full flex flex-col gap-4 md:gap-10 justify-center md:justify-end py-6 items-center">
+          <h3 className=" text-4xl md:text-6xl text-white">{service.name}</h3>
+          <div className="flex  flex-row w-full gap-1 justify-center items-center">
             {service.visa.map((e, i) => (
-              <div className=" p-4 h-20 w-72" key={i}>
+              <div
+                className="text-[11px] md:text-sm p-2 h-16 md:h-20 w-48 md:w-72"
+                key={i}
+              >
                 <button
                   onClick={() => handleButtonClick(i)}
                   className={`border-gray-400 bg-[#0000004a] flex justify-center items-center border rounded-lg w-full gap-4  hover:bg-pink-950 hover:border-pink-700 hover:bg-opacity-20 text-center duration-300 text-white font-semibold h-full py-1 px-4 ${
