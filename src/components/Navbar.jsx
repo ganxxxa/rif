@@ -6,7 +6,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { usePathname } from "next/navigation";
 import { FaChevronUp, FaChevronDown } from "react-icons/fa";
 
-const Navbar = ({ scrolto }) => {
+const Navbar = ({ scrollToHome }) => {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isOpen, setIsOpen] = useState(false);
@@ -19,7 +19,7 @@ const Navbar = ({ scrolto }) => {
     setIsMenuOpen(!isMenuOpen);
   };
   return (
-    <nav className="z-20 absolute top-0 left-0 flex flex-col gap-4 sm:gap-5 w-screen  sm:py-5 sm:px-12 lg:px-32 ">
+    <nav className="z-20 absolute top-0 left-0 flex flex-col gap-4 sm:gap-5 w-screen bg-gradient-to-b from-[#00000087] to-transparent sm:py-5 sm:px-12 lg:px-32 ">
       <div className="h-full flex flex-row   sm:px-8   justify-between items-center">
         <div className="z-40 flex justify-between py-4 mx-8 w-full sm:hidden relative">
           <button className="z-40" onClick={toggleMenu}>
@@ -38,8 +38,8 @@ const Navbar = ({ scrolto }) => {
           onClick={toggleMenu}
         >
           <Link href="/about">درباره ما</Link>
-          <Link href="/services/residency/spain">خدمات اقامت</Link>
-          <Link href="/services/citizenship/turkey">خدمات شهروندی</Link>
+          <Link href="/services/residency">خدمات اقامت</Link>
+          <Link href="/services/citizenship">خدمات شهروندی</Link>
           <Link href="/services/other">سایر خدمات</Link>
           <Link href="/blog">بلاگ</Link>
         </ul>
@@ -53,12 +53,12 @@ const Navbar = ({ scrolto }) => {
             >
               بلاگ
             </Link>
-            <Link
+            <button
               className={`hover:text-pink-400 hover:scale-110 duration-200 `}
-              href={scrolto}
+              onClick={scrollToHome}
             >
               تماس با ما
-            </Link>
+            </button>
             <Link
               className={`hover:text-pink-400 hover:scale-110 duration-200 ${
                 pathname === "/about" ? "text-pink-500" : "text-white"
@@ -89,7 +89,7 @@ const Navbar = ({ scrolto }) => {
                         : " text-gray-600"
                     }`}
                     onClick={toggleDropdown}
-                    href="/services/residency/spain"
+                    href="/services/residency"
                   >
                     اقامت
                   </Link>
@@ -99,7 +99,7 @@ const Navbar = ({ scrolto }) => {
                         ? "text-pink-500"
                         : " text-gray-600"
                     }`}
-                    href="/services/citizenship/turkey"
+                    href="/services/citizenship"
                     onClick={toggleDropdown}
                   >
                     شهروندی

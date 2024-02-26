@@ -85,14 +85,14 @@ const Footer = ({ scrolto }) => {
           <div className="flex flex-col gap-4">
             <h3 className="text-pink-500 text-md font-semibold "> خدمات ما </h3>
             <Link
-              href="/services/residency/spain"
+              href="/services/residency"
               className={`hover:text-pink-400 hover:scale-110 duration-200 `}
             >
               {" "}
               اقامت{" "}
             </Link>
             <Link
-              href="/services/citizenship/turkey"
+              href="/services/citizenship"
               className={`hover:text-pink-400 hover:scale-110 duration-200 `}
             >
               {" "}

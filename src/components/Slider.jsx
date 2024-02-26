@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { FaPause, FaPlay, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const SliderComponent = () => {
+const SliderComponent = ({ scrollToHome }) => {
   const [bgIndex, setBgIndex] = useState(0);
   const [textIndex, setTextIndex] = useState(0);
   const [fadeIn, setFadeIn] = useState(false);
@@ -114,6 +114,7 @@ const SliderComponent = () => {
           </div>
           <div className="flex flex-col items-center sm:items-start">
             <button
+              onClick={scrollToHome}
               type="button"
               className="border-2 text-md border-red-600 text-red-600 mb-4 py-2 px-7 rounded-lg"
             >

@@ -9,18 +9,7 @@ import Image from "next/image";
 import ServicesInfo from "@/components/ServicesInfo";
 import Form from "@/components/Form";
 
-export async function generateStaticParams() {
-  return citizen.map((p) => ({
-    uniquepage: p.flag.toString(),
-  }));
-}
-
 export default function UniquePage({ params: { uniquepage } }) {
-  const service = citizen.find((p) => p.flag.toString() === uniquepage);
-  if (!service) {
-    notFound();
-  }
-
   return (
     <>
       <section className="h-full">
@@ -40,7 +29,6 @@ export default function UniquePage({ params: { uniquepage } }) {
           <ServicesButton path="citizenship" services={citizen} />
         </div>
       </section>
-      {service && <ServicesInfo service={service} />}
       <Accordion />
       <Form />
     </>

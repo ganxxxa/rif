@@ -23,7 +23,7 @@ const ServicesButton = ({ services, path }) => {
             width={42}
             height={42}
             className="p-px rounded-full"
-            src={`/flags/${e.flag}.jpg`}
+            src={`/flags/${e.flag}.svg`}
           />
         </Link>
       ))}

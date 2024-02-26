@@ -11,6 +11,10 @@ import Link from "next/link";
 
 export default function Home() {
   const videoRef = useRef(null);
+  const ref = useRef(null);
+  const scrollToHome = () => {
+    ref.current.scrollIntoView({ behavior: "smooth" });
+  };
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
 
   useEffect(() => {
@@ -43,14 +47,14 @@ export default function Home() {
               با ارائه‌ي راه‌کارهای متناسب، شما را از مهاجرت دائم به کشوری دیگر
               بی‌نیاز می‌کند.{" "}
             </p>
-            <Link className="z-10" href="/#more-info">
-              <button
-                type="button"
-                className="border-2 text-md py-2 px-7 rounded-lg"
-              >
-                اطلاعات بیشتر
-              </button>
-            </Link>
+
+            <button
+              onClick={scrollToHome}
+              type="button"
+              className="border-2 z-10 text-md py-2 px-7 rounded-lg"
+            >
+              اطلاعات بیشتر
+            </button>
           </div>
           {!isVideoLoaded && (
             <Image
@@ -75,9 +79,11 @@ export default function Home() {
           <div className="absolute inset-0 bg-[#0b2538] bg-gradient-to-tl from-[#0b2538] via-[#0b2538a4] from-10% via-50% to-80% to-[#ffffff6c] opacity-55 "></div>
         </div>
       </section>
-      <SliderComponent />
+      <SliderComponent scrollToHome={scrollToHome} />
       <Increament />
-      <Form scrol="more-info" />
+      <div ref={ref}>
+        <Form scrol="more-info" />
+      </div>
       <BlogSection />
     </main>
   );

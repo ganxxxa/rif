@@ -63,12 +63,14 @@ const BlogSection = () => {
           ))}
         </div>
       </div>
-      <button
-        type="submit"
-        className="bg-slate-800 hover:bg-slate-700 text-white font-medium py-3 my-10 px-4 rounded"
-      >
-        مشاهده همه‌ی مطالب
-      </button>
+      <Link href="/blog">
+        <button
+          type="submit"
+          className="bg-slate-800 hover:bg-slate-700 text-white font-medium py-3 my-10 px-4 rounded"
+        >
+          مشاهده همه‌ی مطالب
+        </button>
+      </Link>
     </section>
   );
 };
