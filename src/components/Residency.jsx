@@ -8,7 +8,6 @@ import SecondSectionComponent from "./SecondSectionComponent";
 
 const ServicesInfo = ({ service }) => {
   const [selectedButton, setSelectedButton] = useState(0);
-  console.log(service.visa[selectedButton].name);
   const handleButtonClick = (index) => {
     setSelectedButton(index);
   };

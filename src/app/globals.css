@@ -8,6 +8,8 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  overflow-x: hidden;
+  width: 100vw;
   direction: rtl;
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -25,4 +27,82 @@ body {
 }
 input[type="radio"] {
   accent-color: rgb(236 72 153);
+}
+
+.post-content img {
+  padding-top: 16px;
+  padding-bottom: 32px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%; /* Ensures the image is responsive and fits its container */
+}
+.post-content svg {
+  width: auto;
+  height: auto;
+}
+.post-content h1 {
+  font-size: 2.25rem; /* 36px */
+  margin-bottom: 0.5em;
+}
+
+.post-content h2 {
+  font-size: 2rem; /* 32px */
+  margin-bottom: 0.5em;
+}
+
+.post-content h3 {
+  font-size: 1.75rem; /* 28px */
+  margin-bottom: 0.5em;
+}
+
+.post-content h4 {
+  font-size: 1.5rem; /* 24px */
+  margin-bottom: 0.5em;
+}
+
+.post-content h5 {
+  font-size: 1.25rem; /* 20px */
+  margin-bottom: 0.5em;
+}
+
+.post-content h6 {
+  font-size: 1rem; /* 16px */
+  margin-bottom: 0.5em;
+}
+
+.post-content p {
+  font-size: 1rem; /* 16px */
+  line-height: 1.6;
+  margin-bottom: 1em;
+}
+
+.post-content ul {
+  list-style-type: disc;
+  margin-left: 2em;
+  margin-bottom: 1em;
+}
+
+.post-content ul li {
+  text-decoration: none;
+  margin-bottom: 0.5em;
+  margin-left: 1.5em;
+}
+
+.post-content a {
+  color: #2c2c2c; /* Bootstrap default blue for links */
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Optionally, you can add hover effects for links */
+.post-content a:hover {
+  color: #313131; /* A darker shade of blue for hover state */
+  font-weight: 500;
+  text-decoration: none; /* Removes underline on hover */
+}
+.sidebar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
 }

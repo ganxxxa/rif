@@ -19,9 +19,7 @@ export default function RootLayout({ children }) {
   };
   return (
     <html lang="en">
-      <body
-        className={`leading-relaxed  overflow-x-hidden w-screen ${arabic.className}`}
-      >
+      <body className={` ${arabic.className}`}>
         <Navbar scrollToHome={scrollToHome} />
         {children}
         <div ref={ref}>

@@ -12,10 +12,12 @@
     "@next/font": "^14.1.0",
     "emailjs-com": "^3.2.0",
     "framer-motion": "^11.0.3",
+    "html-react-parser": "^5.1.8",
     "next": "14.1.0",
     "react": "^18",
     "react-dom": "^18",
-    "react-icons": "^5.0.1"
+    "react-icons": "^5.0.1",
+    "react-spinners": "^0.13.8"
   },
   "devDependencies": {
     "autoprefixer": "^10.0.1",

@@ -19,7 +19,7 @@ const Navbar = ({ scrollToHome }) => {
     setIsMenuOpen(!isMenuOpen);
   };
   return (
-    <nav className="z-20 absolute top-0 left-0 flex flex-col gap-4 sm:gap-5 w-screen bg-gradient-to-b from-[#00000087] to-transparent sm:py-5 sm:px-12 lg:px-32 ">
+    <nav className="z-20 absolute top-0 left-0 flex flex-col gap-4 sm:gap-5 w-screen bg-gradient-to-b from-[#142029ab] to-transparent sm:py-5 sm:px-12 lg:px-32 ">
       <div className="h-full flex flex-row   sm:px-8   justify-between items-center">
         <div className="z-40 flex justify-between py-4 mx-8 w-full sm:hidden relative">
           <button className="z-40" onClick={toggleMenu}>
