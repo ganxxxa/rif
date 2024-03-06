@@ -7,7 +7,7 @@ import { FaClock } from "react-icons/fa";
 async function fetchSinglePost(postId) {
   // noStore();
   const res = await fetch(
-    `https://rifpersia.com/wpadmin/wp-json/wp/v2/posts/${postId}?_embed`
+    `https://rifpersia.com/blog/wp-json/wp/v2/posts/${postId}?_embed`
   );
   const post = await res.json();
 

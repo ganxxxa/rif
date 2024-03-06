@@ -8,7 +8,11 @@ export default function Card({ icon, title, paragraph }) {
         <h3 className="text-md font-semibold">{title}</h3>
       </div>
       <hr className="border-t border-gray-300 mb-4" />
-      <p className="mt-2 text-sm">{paragraph}</p>
+      {paragraph.split("\n").map((line, index) => (
+        <p key={index} className="mt-2 text-sm">
+          {line}
+        </p>
+      ))}
     </div>
   );
 }

@@ -7,7 +7,7 @@ import Link from "next/link";
 async function fetchPosts() {
   noStore();
   const res = await fetch(
-    "https://rifpersia.com/wpadmin/wp-json/wp/v2/posts?_embed&per_page=3&order=desc&orderby=date"
+    "https://rifpersia.com/blog/wp-json/wp/v2/posts?_embed&per_page=3&order=desc&orderby=date"
   );
   const posts = await res.json();
   return posts.map((post) => ({
@@ -43,12 +43,12 @@ export const BlogCard = ({ title, date, imageUrl, postId }) => {
           className="text-gray-800 font-bold text-lg pl-4 mb-4"
           dangerouslySetInnerHTML={{ __html: title }}
         />
-        <Link
-          href={`/blog/${postId}`}
+        <a
+          // href={`/blog/${postId}`}
           className="text-gray-800 font-semibold text-sm"
         >
           اطلاعات بیشتر
-        </Link>
+        </a>
       </div>
     </div>
   );
@@ -79,11 +79,11 @@ function BlogSection() {
           ))}
         </div>
       </div>
-      <Link href="/blog">
+      <a href="/blog">
         <button className="bg-slate-800 hover:bg-slate-700 text-white font-medium py-3 my-10 px-4 rounded">
           مشاهده همه‌ی مطالب
         </button>
-      </Link>
+      </a>
     </section>
   );
 }

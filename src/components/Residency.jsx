@@ -59,6 +59,12 @@ const ServicesInfo = ({ service }) => {
           imageUrl={`/bg-flag/${service.flag}.jpg`} // Assuming imageUrl is passed
         />
 
+        {selected.data[7] && selected.data[7].paragraph && (
+          <ParagraphComponent
+            title={selected.data[7].title}
+            paragraph={selected.data[7].paragraph}
+          />
+        )}
         {selected.data[2].paragraph && (
           <ParagraphComponent
             title={selected.data[2].title}
@@ -66,6 +72,12 @@ const ServicesInfo = ({ service }) => {
           />
         )}
 
+        {selected.data[8] && selected.data[8].paragraph && (
+          <ParagraphComponent
+            title={selected.data[8].title}
+            paragraph={selected.data[8].paragraph}
+          />
+        )}
         <div
           style={{ backgroundImage: `url(/in.jpg)` }}
           className="w-screen bg-[#0B2538]"
