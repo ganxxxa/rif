@@ -15,10 +15,54 @@ const Form = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const validateForm = () => {
+    const { name, email, phone, service } = formData;
+    // Email validation regex pattern
+    const emailPattern = /^\S+@\S+\.\S+$/;
+
+    if (!name.trim() || !email.trim() || !phone.trim() || !service.trim()) {
+      alert("لطفاً تمامی فیلدهای ضروری را پر کنید.");
+      return false;
+    }
+    if (!emailPattern.test(email)) {
+      alert("فرمت آدرس ایمیل معتبر نیست.");
+      return false;
+    }
+    return true;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // Your EmailJS template parameters
+    // Basic validation for empty fields
+    if (
+      !formData.name ||
+      !formData.email ||
+      !formData.phone ||
+      !formData.service
+    ) {
+      alert("لطفا تمامی فیلدهای مورد نیاز را پر کنید.");
+      return;
+    }
+
+    // Validation for email format
+    const emailRegex = /^\S+@\S+\.\S+$/;
+    if (!emailRegex.test(formData.email)) {
+      alert("فرمت ایمیل وارد شده صحیح نیست.");
+      return;
+    }
+
+    // Basic validation for phone format (adjust regex according to your requirements)
+    const phoneRegex = /^[0-9]+$/; // Adjust this regex to fit the phone number format you're expecting
+    if (!phoneRegex.test(formData.phone)) {
+      alert(
+        "فرمت شماره تلفن همراه وارد شده صحیح نیست. لطفا فقط از اعداد استفاده کنید."
+      );
+      return;
+    }
+
+    setIsLoading(true); // If you decide to implement loading state
+
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
@@ -27,7 +71,7 @@ const Form = () => {
       service: formData.service,
     };
 
-    // Replace these with your EmailJS configuration
+    // Your EmailJS configuration
     const serviceID = "service_0776pd7";
     const templateID = "template_qinadtc";
     const userID = "9ZWBA7BUYVUUvq-az";
@@ -37,7 +81,6 @@ const Form = () => {
       .then((response) => {
         console.log("Email sent!", response);
         alert("پیام شما ارسال شد");
-
         setFormData({
           name: "",
           email: "",
@@ -50,6 +93,7 @@ const Form = () => {
         console.error("Email error:", error);
       });
   };
+
   return (
     <div
       className="flex justify-center items-center object-cover bg-cover bg-white"
