@@ -79,7 +79,7 @@ function BlogSection() {
           ))}
         </div>
       </div>
-      <a href="/blog">
+      <a href="https://rifpersia.com/blog">
         <button className="bg-slate-800 hover:bg-slate-700 text-white font-medium py-3 my-10 px-4 rounded">
           مشاهده همه‌ی مطالب
         </button>

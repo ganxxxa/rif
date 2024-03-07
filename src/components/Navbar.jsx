@@ -49,7 +49,7 @@ const Navbar = ({ scrollToHome }) => {
               className={`hover:text-pink-400 hover:scale-110 duration-200 ${
                 pathname === "/blog" ? "text-pink-500" : "text-white"
               }`}
-              href="/blog"
+              href="https://rifpersia.com/blog"
             >
               بلاگ
             </Link>
