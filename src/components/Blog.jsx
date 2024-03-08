@@ -10,6 +10,7 @@ async function fetchPosts() {
     "https://rifpersia.com/blog/wp-json/wp/v2/posts?_embed&per_page=3&order=desc&orderby=date"
   );
   const posts = await res.json();
+  console.log(posts);
   return posts.map((post) => ({
     id: post.id,
     title: post.title.rendered,
@@ -20,7 +21,7 @@ async function fetchPosts() {
         : post.excerpt.rendered,
 
     imageUrl: post._embedded?.["wp:featuredmedia"]?.[0]?.source_url || "",
-    postId: post.id,
+    postId: post.link,
   }));
 }
 
@@ -43,10 +44,7 @@ export const BlogCard = ({ title, date, imageUrl, postId }) => {
           className="text-gray-800 font-bold text-lg pl-4 mb-4"
           dangerouslySetInnerHTML={{ __html: title }}
         />
-        <a
-          // href={`/blog/${postId}`}
-          className="text-gray-800 font-semibold text-sm"
-        >
+        <a href={`${postId}`} className="text-gray-800 font-semibold text-sm">
           اطلاعات بیشتر
         </a>
       </div>
