@@ -78,6 +78,13 @@ const ServicesInfo = ({ service }) => {
             paragraph={selected.data[8].paragraph}
           />
         )}
+
+        {selected.data[9] && selected.data[9].paragraph && (
+          <ParagraphComponent
+            title={selected.data[9].title}
+            paragraph={selected.data[9].paragraph}
+          />
+        )}
         <div
           style={{ backgroundImage: `url(/in.jpg)` }}
           className="w-screen bg-[#0B2538]"

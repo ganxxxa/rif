@@ -19,8 +19,8 @@ const Navbar = ({ scrollToHome }) => {
     setIsMenuOpen(!isMenuOpen);
   };
   return (
-    <nav className="z-20 absolute top-0 left-0 flex flex-col gap-4 sm:gap-5 w-screen bg-gradient-to-b from-[#142029ab] to-transparent sm:py-5 sm:px-12 lg:px-32 ">
-      <div className="h-full flex flex-row   sm:px-8   justify-between items-center">
+    <nav className="z-20 absolute top-0 left-0 flex flex-col text-black gap-4 sm:gap-5 w-screen bg-gradient-to-b from-[#d6d6d6e2] to-[#d6d6d6e2] sm:py-5 sm:px-12 lg:px-32 ">
+      <div className="h-full flex flex-row  text-black sm:px-8   justify-between items-center">
         <div className="z-40 flex justify-between py-4 mx-8 w-full sm:hidden relative">
           <button className="z-40" onClick={toggleMenu}>
             {isMenuOpen ? <FaTimes /> : <FaBars />}
@@ -32,7 +32,7 @@ const Navbar = ({ scrollToHome }) => {
           </Link>
         </div>
         <ul
-          className={`z-30 absolute top-0 text-lg font-semibold sm:hidden flex flex-col h-screen w-full justify-center items-center gap-6  bg-gradient-to-b pt-8 from-[#142029] from-30% to-[#0B2538] transition-transform duration-300 ease-in-out ${
+          className={`z-30 absolute top-0 text-lg font-semibold sm:hidden flex flex-col text-black h-screen w-full justify-center items-center gap-6  bg-gradient-to-b pt-8 from-[#bcbcbc] from-30% to-[#bcbcbc] transition-transform duration-300 ease-in-out ${
             !isMenuOpen ? "-translate-y-full" : "translate-y-0"
           }`}
           onClick={toggleMenu}
@@ -47,7 +47,7 @@ const Navbar = ({ scrollToHome }) => {
           <ul className=" flex flex-col sm:flex-row-reverse gap-6 sm:gap-9">
             <Link
               className={`hover:text-pink-400 hover:scale-110 duration-200 ${
-                pathname === "/blog" ? "text-pink-500" : "text-white"
+                pathname === "/blog" ? "text-pink-500" : "text-black"
               }`}
               href="https://rifpersia.com/blog"
             >
@@ -61,7 +61,7 @@ const Navbar = ({ scrollToHome }) => {
             </button>
             <Link
               className={`hover:text-pink-400 hover:scale-110 duration-200 ${
-                pathname === "/about" ? "text-pink-500" : "text-white"
+                pathname === "/about" ? "text-pink-500" : "text-black"
               }`}
               href="/about"
             >
@@ -70,7 +70,7 @@ const Navbar = ({ scrollToHome }) => {
             <div className="relative">
               <button
                 className={`hover:text-pink-400  self-start hover:scale-110 flex gap-1 items-center duration-200 ${
-                  isOpen ? "text-pink-500" : "text-white"
+                  isOpen ? "text-pink-500" : "text-black"
                 } `}
                 onClick={toggleDropdown}
                 href="/about"
@@ -124,7 +124,7 @@ const Navbar = ({ scrollToHome }) => {
           </Link>
         </div>
       </div>
-      <span className="hidden sm:block h-0.5 opacity-30  w-full bg-white" />
+      {/* <span className="hidden sm:block h-0.5 opacity-30  w-full bg-white" /> */}
     </nav>
   );
 };

@@ -104,7 +104,7 @@ const Form = () => {
           درخواست مشاوره
         </h3>
         <p className="text-gray-500 text-sm py-4 mb-8 md:mb-12">
-          با تکمیل این فرم مشاوران ما در کمتر از 24 ساعت با شما تماس می‌گیرند.
+          با تکمیل این فرم مشاوران ما در کمتر از ۲۴ ساعت با شما تماس می‌گیرند.
         </p>
         <form className="w-full flex flex-col gap-1" onSubmit={handleSubmit}>
           <div className="flex flex-col md:flex-row gap-4">
