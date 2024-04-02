@@ -2,11 +2,21 @@
 
 import React, { useState, useEffect, useRef } from "react";
 
+const convertToPersianNum = (num) => {
+  const persianNumbers = ["۰", "۱", "۲", "۳", "۴", "۵", "۶", "۷", "۸", "۹"];
+  const numStr = num.toString();
+  const persianNumStr = numStr
+    .split("")
+    .map((digit) => persianNumbers[parseInt(digit, 10)] || digit)
+    .join("");
+  return persianNumStr;
+};
 const Increament = () => {
   const [counter1, setCounter1] = useState(699);
   const [counter2, setCounter2] = useState(0);
   const [counter3, setCounter3] = useState(0);
   const componentRef = useRef(null);
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -71,21 +81,21 @@ const Increament = () => {
       <div className="flex flex-col justify-between gap-2 items-center border-gray-500 border my-4  px-4 py-3 rounded-xl w-32">
         <p className="text-md text-gray-100   "> پرونده موفق </p>
         <p className="text-2xl text-gray-100 ">
-          {counter1 >= 999 ? "999" : counter1} +
+          {convertToPersianNum(counter1 >= 999 ? 999 : counter1)} +
         </p>
         <p className="text-lg  text-pink-500"> مورد </p>
       </div>
       <div className="flex flex-col justify-between gap-2 items-center border-gray-500 border my-4 px-4 py-3 rounded-xl w-32">
         <p className="text-md text-gray-100  ">سابقه فعالیت </p>
         <p className="text-2xl text-gray-100  ">
-          {counter2 >= 10 ? "10" : counter2} +
+          {convertToPersianNum(counter2 >= 10 ? 10 : counter2)} +
         </p>
         <p className="text-lg text-pink-500">سال </p>
       </div>
       <div className="flex flex-col justify-between gap-2 items-center border-gray-500 border my-4  px-4 py-3 rounded-xl w-32">
         <p className="text-md text-gray-100 ">خدمات در </p>
         <p className="text-2xl text-gray-100  ">
-          {counter3 >= 15 ? "15" : counter3} +
+          {convertToPersianNum(counter3 >= 15 ? 15 : counter3)} +
         </p>
         <p className="text-lg text-pink-500">کشور </p>
       </div>

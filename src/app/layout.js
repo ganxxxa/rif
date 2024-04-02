@@ -7,6 +7,7 @@ import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import Form from "@/components/Form";
 import { useRef } from "react";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const arabic = Noto_Sans_Arabic({
   subsets: ["arabic"],
@@ -26,6 +27,7 @@ export default function RootLayout({ children }) {
           <Footer />
         </div>
       </body>
+      <GoogleAnalytics gaId="G-10J6DPPGEF" />
     </html>
   );
 }

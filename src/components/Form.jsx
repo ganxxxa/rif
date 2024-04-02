@@ -60,9 +60,7 @@ const Form = () => {
       );
       return;
     }
-
-    setIsLoading(true); // If you decide to implement loading state
-
+    validateForm();
     const templateParams = {
       from_name: formData.name,
       from_email: formData.email,
